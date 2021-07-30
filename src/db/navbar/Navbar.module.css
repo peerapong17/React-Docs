@@ -1,0 +1,18 @@
+.navbar {
+  height: 70px;
+  background: rgb(235, 185, 236);
+  display: flex;
+}
+
+.navLink {
+  padding: 10px 20px;
+  margin: auto 40px;
+  font-size: 30px;
+  color: black;
+  font-weight: 600;
+}
+
+.navLink:hover {
+  background: rgb(199, 133, 216);
+  border-radius: 7px;
+}
