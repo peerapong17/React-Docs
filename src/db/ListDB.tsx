@@ -2,7 +2,8 @@ import Navbar from "./navbar/Navbar";
 import "./ListDB.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import style from './navbar/Navbar.module.css'
 
 interface DataResponse {
   id: string;
@@ -39,7 +40,14 @@ const Database: React.FC = () => {
 
   return (
     <div>
-      <Navbar />
+      <Navbar>
+      <Link className={style.navLink} to="/listdb">
+        List
+      </Link>
+      <Link className={style.navLink} to="/create">
+        Create
+      </Link>
+      </Navbar>
       <div className="container">
         <h1>Country</h1>
         {countries.length !== 0 ? (
@@ -54,7 +62,7 @@ const Database: React.FC = () => {
               {countries.map((country) => {
                 return (
                   <tr key={country.id}>
-                    <td>{country.name}</td>
+                    <Link to={`/listdb/${country.name}/athlete`}><td>{country.name}</td></Link>
                     <td>{country.capital}</td>
                     <td>{country.continent}</td>
                     <td>

@@ -10,6 +10,7 @@
   font-size: 30px;
   color: black;
   font-weight: 600;
+  text-decoration: none;
 }
 
 .navLink:hover {

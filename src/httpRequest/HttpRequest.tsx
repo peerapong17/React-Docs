@@ -36,6 +36,3 @@ const HttpRequest: React.FC = () => {
 };
 
 export default HttpRequest;
-function userState<T>(arg0: never[]): [any, any] {
-  throw new Error("Function not implemented.");
-}

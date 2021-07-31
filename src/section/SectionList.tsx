@@ -12,7 +12,10 @@ const SectionList: React.FC = () => {
       <Link to="/httpRequest" style={{ textDecoration: "none" }}>
         <Card section="HTTP Request" />
       </Link>
+      <Link to="/listdb" style={{ textDecoration: "none" }}>
       <Card section="Database" />
+      </Link>
+      
       <Card section="Redux" />
     </div>
   );

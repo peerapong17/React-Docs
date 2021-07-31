@@ -1,7 +1,8 @@
 import axios from "axios";
 import { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Navbar from "../navbar/Navbar";
+import style from "../navbar/Navbar.module.css"
 
 interface Input {
   name: string;
@@ -47,7 +48,14 @@ const Create = () => {
 
   return (
     <div>
-      <Navbar />
+      <Navbar>
+      <Link className={style.navLink} to="/listdb">
+        List
+      </Link>
+      <Link className={style.navLink} to="/create">
+        Create
+      </Link>
+      </Navbar>
       <form onSubmit={(e) => onClick(e)}>
         <div>
           <label htmlFor="name">Name:</label>

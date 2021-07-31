@@ -13,19 +13,25 @@ interface UserResponse {
 }
 
 const User: React.FC = () => {
-  const history = useHistory()
   const { id } = useParams<{ id: string }>();
+  const history = useHistory();
   const [userData, setUserData] = useState<UserResponse>();
 
   useEffect(() => {
     axios
       .get<UserResponse>(`https://jsonplaceholder.typicode.com/users/${id}`)
-      .then(({ data }) => setUserData(data));
-  }, []);
+      .then(({ data }) => setUserData(data))
+      .catch((err) => alert(err.message));
+  }, [id]);
 
   return (
     <div className={style.container}>
-      <button onClick={()=> history.push('/httpRequest')} className={style.button}>Back</button>
+      <button
+        onClick={() => history.push("/httpRequest")}
+        className={style.button}
+      >
+        Back
+      </button>
       {userData ? (
         <div>
           <h1>Id: {userData.id}</h1>
