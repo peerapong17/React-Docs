@@ -1,4 +1,5 @@
 import React, { FormEvent, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 import style from "./Form.module.css";
 
 interface Input {
@@ -32,6 +33,34 @@ const Form: React.FC = () => {
 
   return (
     <div>
+      <nav className={style.nav}>
+        <ul className={style.ui}>
+          <li className={style.li}>
+            <NavLink
+              activeStyle={{
+                backgroundColor: "rgb(99, 206, 174)",
+                padding: "10px",
+              }}
+              className={style.navLink}
+              to="/form"
+            >
+              Normal Form
+            </NavLink>
+          </li>
+          <li className={style.li}>
+            <NavLink
+              activeStyle={{
+                backgroundColor: "rgb(99, 206, 174)",
+                padding: "10px",
+              }}
+              className={style.navLink}
+              to="/formik"
+            >
+              Formik
+            </NavLink>
+          </li>
+        </ul>
+      </nav>
       <form onSubmit={(e) => onClick(e)} className={style.container}>
         <div className={style.formControl}>
           <label htmlFor="username">Username:</label>

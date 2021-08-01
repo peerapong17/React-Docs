@@ -1,0 +1,61 @@
+.li {
+    display: inline;
+    margin: auto 20px;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 7px;
+    padding: 10px;
+  }
+  
+  .li:hover {
+      background: rgb(105, 223, 187);
+  }
+  
+  .ui {
+    margin: 0px;
+  }
+  
+  .nav {
+    height: 50px;
+    background: rgb(147, 229, 147);
+    display: flex;
+    align-items: center;
+  }
+  
+  .navLink{
+    text-decoration: none;
+    color: rgb(43, 43, 43);
+  }
+
+  .formGroup{
+      display: flex;
+      flex-direction: column;
+      width: 30%;
+  }
+
+  .container{
+      margin: 0px 10%;
+  }
+
+  .btn{
+      margin-top: 20px;
+      background: rgb(121, 255, 244);
+      border: none;
+      padding: 15px;
+      font-size: 30px;
+      font-weight: 600;
+      color: rgb(241, 241, 241);
+      cursor: pointer;
+      border-radius: 7px;
+  }
+
+  .btn:hover {
+      background: rgb(92, 243, 230);
+  }
+
+  .errorMessage{
+      font-size: 20px;
+      color: red;
+
+  }

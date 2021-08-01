@@ -15,6 +15,9 @@ const SectionList: React.FC = () => {
       <Link to="/listdb" style={{ textDecoration: "none" }}>
       <Card section="Database" />
       </Link>
+      <Link to="/auth" style={{ textDecoration: "none" }}>
+      <Card section="Auth" />
+      </Link>
       
       <Card section="Redux" />
     </div>

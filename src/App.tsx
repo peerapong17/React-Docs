@@ -11,6 +11,9 @@ import ListDB from "./db/ListDB";
 import Athlete from "./db/athlete/athlete";
 import CreateAthlete from "./db/athlete/create/CreateAthlete";
 import UpdateAthlete from "./db/athlete/update/UpdateAthlete";
+import FormikForm from "./form/Formik/Formik";
+import Auth from "./auth/Auth";
+import Register from "./auth/register/Signup";
 
 
 const App: React.FC = () => {
@@ -23,6 +26,12 @@ const App: React.FC = () => {
           </Route>
           <Route path="/form">
             <Form />
+          </Route>
+          <Route path="/formik">
+            <FormikForm />
+          </Route>
+          <Route path="/auth">
+            <Auth />
           </Route>
           <Route path="/httpRequest">
             <HttpRequest />
