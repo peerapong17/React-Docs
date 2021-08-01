@@ -25,11 +25,9 @@ const initialValues: Input = {
 const Login = () => {
   const history = useHistory()
   const onLogin = (values: Input) => {
-    console.log(values);
     axios
       .post("http://localhost:3000/authentication/login", values)
       .then(({data}) => {
-        console.log(data)
         if(data.authorization === true){
           localStorage.setItem('userData',JSON.stringify(data.access_token));
           history.push('/auth/welcome')
