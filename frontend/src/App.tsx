@@ -1,6 +1,11 @@
 import React from "react";
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import Form from "./form/Form";
 import SectionList from "./section/SectionList";
 import HttpRequest from "./httpRequest/HttpRequest";
@@ -13,15 +18,17 @@ import CreateAthlete from "./db/athlete/create/CreateAthlete";
 import UpdateAthlete from "./db/athlete/update/UpdateAthlete";
 import FormikForm from "./form/Formik/Formik";
 import Auth from "./auth/Auth";
-import Register from "./auth/register/Signup";
-
+import { AnimatePresence } from "framer-motion";
+import Search from "./redux-section/Search";
 
 const App: React.FC = () => {
+  const location = useLocation();
+
   return (
     <div className="App">
-      <Router>
-        <Switch>
-        <Route exact path="/">
+      <Switch location={location} key={location.key}>
+        <AnimatePresence>
+          <Route exact path="/">
             <SectionList />
           </Route>
           <Route path="/form">
@@ -54,11 +61,14 @@ const App: React.FC = () => {
           <Route path="/create">
             <Create />
           </Route>
+          <Route path="/redux">
+            <Search />
+          </Route>
           <Route path="/update/:id">
             <Update />
           </Route>
-        </Switch>
-      </Router>
+        </AnimatePresence>
+      </Switch>
     </div>
   );
 };
