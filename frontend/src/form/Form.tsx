@@ -63,10 +63,11 @@ const Form: React.FC = () => {
       </nav>
       <form onSubmit={(e) => onClick(e)} className={style.container}>
         <div className={style.formControl}>
-          <label htmlFor="username">Username:</label>
+          <label className={style.label} htmlFor="username">Username:</label>
           <input
             value={Input.username}
             type="text"
+            className={style.input}
             id="username"
             autoComplete="off"
             name="username"
@@ -74,21 +75,23 @@ const Form: React.FC = () => {
           />
         </div>
         <div className={style.formControl}>
-          <label htmlFor="email">Email:</label>
+          <label className={style.label} htmlFor="email">Email:</label>
           <input
             onChange={(e) => onChange(e)}
             value={Input.email}
             type="text"
+            className={style.input}
             id="email"
             name="email"
             autoComplete="off"
           />
         </div>
         <div className={style.formControl}>
-          <label htmlFor="password">Password:</label>
+          <label className={style.label} htmlFor="password">Password:</label>
           <input
             value={Input.password}
             type="text"
+            className={style.input}
             id="password"
             autoComplete="off"
             name="password"

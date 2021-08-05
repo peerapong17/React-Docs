@@ -20,6 +20,7 @@ import FormikForm from "./form/Formik/Formik";
 import Auth from "./auth/Auth";
 import { AnimatePresence } from "framer-motion";
 import Search from "./redux-section/Search";
+import Todo from "./Todo/TodoPage";
 
 const App: React.FC = () => {
   const location = useLocation();
@@ -48,6 +49,9 @@ const App: React.FC = () => {
           </Route>
           <Route exact path="/listdb">
             <ListDB />
+          </Route>
+          <Route exact path="/todo">
+            <Todo />
           </Route>
           <Route exact path="/listdb/:country/athlete">
             <Athlete />

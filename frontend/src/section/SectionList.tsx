@@ -25,9 +25,11 @@ const SectionList: React.FC = () => {
       <Link to="/auth" style={{ textDecoration: "none" }}>
         <Card section="Auth" />
       </Link>
-
       <Link to="/redux" style={{ textDecoration: "none" }}>
         <Card section="Redux" />
+      </Link>
+      <Link to="/todo" style={{ textDecoration: "none" }}>
+        <Card section="Todo" />
       </Link>
     </motion.div>
   );
