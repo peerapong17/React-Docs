@@ -1,4 +1,4 @@
-import { WeatherData } from './../../interface/index';
+import { WeatherData } from "./../../interface/index";
 import { Action } from "../action/index";
 import { ActionType } from "../actions-types";
 
@@ -9,7 +9,7 @@ export interface StateRepository {
 }
 
 const initialState: StateRepository = {
-  data: <WeatherData>{},
+  data: {} as WeatherData,
   loading: false,
   error: "",
 };
@@ -20,12 +20,11 @@ export const repositoriesReducer = (
 ): StateRepository => {
   switch (action.type) {
     case ActionType.SEARCH_REPOSITORY:
-      return { data: <WeatherData>{}, loading: true, error: null };
+      return { data: {} as WeatherData, loading: true, error: null };
     case ActionType.SEARCH_REPOSITORY_SUCCESS:
-      console.log(action.payload)
       return { data: action.payload, loading: false, error: null };
     case ActionType.SEARCH_REPOSITORY_ERROR:
-      return { data: <WeatherData>{}, loading: false, error: action.payload };
+      return { data: {} as WeatherData, loading: false, error: action.payload };
 
     default:
       return state;

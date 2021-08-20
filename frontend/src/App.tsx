@@ -21,6 +21,8 @@ import Auth from "./auth/Auth";
 import { AnimatePresence } from "framer-motion";
 import Search from "./redux-section/Search";
 import Todo from "./Todo/TodoPage";
+import Material from "./material-ui";
+import ButtonSc from "./material-ui/button/Button";
 
 const App: React.FC = () => {
   const location = useLocation();
@@ -29,48 +31,27 @@ const App: React.FC = () => {
     <div className="App">
       <Switch location={location} key={location.key}>
         <AnimatePresence>
-          <Route exact path="/">
-            <SectionList />
-          </Route>
-          <Route path="/form">
-            <Form />
-          </Route>
-          <Route path="/formik">
-            <FormikForm />
-          </Route>
-          <Route path="/auth">
-            <Auth />
-          </Route>
-          <Route path="/httpRequest">
-            <HttpRequest />
-          </Route>
-          <Route path="/user/:id">
-            <User />
-          </Route>
-          <Route exact path="/listdb">
-            <ListDB />
-          </Route>
-          <Route exact path="/todo">
-            <Todo />
-          </Route>
-          <Route exact path="/listdb/:country/athlete">
-            <Athlete />
-          </Route>
-          <Route path="/listdb/:country/athlete/create">
-            <CreateAthlete />
-          </Route>
-          <Route path="/listdb/:country/athlete/update/:id">
-            <UpdateAthlete />
-          </Route>
-          <Route path="/create">
-            <Create />
-          </Route>
-          <Route path="/redux">
-            <Search />
-          </Route>
-          <Route path="/update/:id">
-            <Update />
-          </Route>
+          <Route exact path="/" component={SectionList} />
+          <Route path="/form" component={Form} />
+          <Route path="/formik" component={FormikForm} />
+          <Route path="/auth" component={Auth} />
+          <Route path="/httpRequest" component={HttpRequest} />
+          <Route path="/user/:id" component={User} />
+          <Route exact path="/listdb" component={ListDB} />
+          <Route exact path="/todo" component={Todo} />
+          <Route exact path="/listdb/:country/athlete" component={Athlete} />
+          <Route
+            path="/listdb/:country/athlete/create"
+            component={CreateAthlete}
+          />
+          <Route
+            path="/listdb/:country/athlete/update/:id"
+            component={UpdateAthlete}
+          />
+          <Route path="/create" component={Create} />
+          <Route path="/redux" component={Search} />
+          <Route path="/update/:id" component={Update} />
+          <Route path="/material" component={Material} />
         </AnimatePresence>
       </Switch>
     </div>

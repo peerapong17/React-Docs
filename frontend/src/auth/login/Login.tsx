@@ -26,11 +26,27 @@ const initialValues: Input = {
 const Login = () => {
   const history = useHistory()
   const onLogin = (values: Input) => {
+    // axios
+    //   .post("http://localhost:3000/authentication/login", values)
+    //   .then(({data}) => {
+    //     if(data.authorization === true){
+    //       localStorage.setItem('userData',JSON.stringify(data.access_token));
+    //       history.push('/auth/welcome')
+    //     }
+    //   })
+    //   .catch((err) => alert(err.message));
+
+
+    /************************************************ */
+    /* This is another way to get use JWT from nodejs */
+    /************************************************ */
+
+    
     axios
-      .post("http://localhost:3000/authentication/login", values)
+      .post("http://localhost:3000/login", values)
       .then(({data}) => {
         if(data.authorization === true){
-          localStorage.setItem('userData',JSON.stringify(data.access_token));
+          localStorage.setItem('userData',JSON.stringify(data.accessToken));
           history.push('/auth/welcome')
         }
       })

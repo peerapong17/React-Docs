@@ -31,8 +31,16 @@ const initialValues: Input = {
 const Signup = () => {
   const history = useHistory()
   const onSubmit = (values: Input) => {
-    axios
-      .post("http://localhost:3000/authentication", values)
+    // axios
+    //   .post("http://localhost:3000/authentication", values)
+    //   .then((res) => history.push('/auth'));
+
+    /************************************************ */
+    /* This is another way to get use JWT from nodejs */
+    /************************************************ */
+
+       axios
+      .post("http://localhost:3000/register", values)
       .then((res) => history.push('/auth'));
   };
 
