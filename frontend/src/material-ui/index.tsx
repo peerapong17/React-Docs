@@ -19,6 +19,8 @@ import DrawerList from "./drawer-list/DrawerList";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import NoteAddIcon from '@material-ui/icons/NoteAdd';
 import FormSc from "./form/Form";
+import Validation from "./validation/validation";
+import DoneAllIcon from '@material-ui/icons/DoneAll';
 
 const Material: React.FC = () => {
   let { path, url } = useRouteMatch();
@@ -49,12 +51,16 @@ const Material: React.FC = () => {
           <DrawerList Section="Form" path={`${url}/form`}>
             <NoteAddIcon />
           </DrawerList>
+          <DrawerList Section="Validation" path={`${url}/validation`}>
+            <DoneAllIcon />
+          </DrawerList>
         </Drawer>
       </AppBar>
 
       <Container>
         <Route exact path={`${path}/button`} component={ButtonSc} />
         <Route exact path={`${path}/form`} component={FormSc} />
+        <Route exact path={`${path}/validation`} component={Validation} />
       </Container>
     </Switch>
   );

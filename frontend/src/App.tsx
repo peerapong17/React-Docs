@@ -22,7 +22,6 @@ import { AnimatePresence } from "framer-motion";
 import Search from "./redux-section/Search";
 import Todo from "./Todo/TodoPage";
 import Material from "./material-ui";
-import ButtonSc from "./material-ui/button/Button";
 
 const App: React.FC = () => {
   const location = useLocation();
